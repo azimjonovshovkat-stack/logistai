@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: logistai-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false # paste your Neon (or other) Postgres connection string here
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000 # update to your Vercel URL after the frontend is deployed
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_EXPIRE_MINUTES
+        value: "10080"
+      - key: UPLOAD_DIR
+        value: uploads
+      - key: MAX_UPLOAD_MB
+        value: "8"
+      - key: AI_REQUEST_TIMEOUT_SECONDS
+        value: "2.5"
+      - key: BOOTSTRAP_ADMIN_PHONE
+        value: "+998900000000"
+      - key: BOOTSTRAP_ADMIN_PASSWORD
+        sync: false # set your own admin password here, don't leave the repo default
+      - key: BOOTSTRAP_ADMIN_NAME
+        value: Bosh Administrator
