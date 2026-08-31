@@ -8,6 +8,9 @@ Framer Motion frontend, Python FastAPI + asyncpg backend, PostgreSQL baza,
 Dark Mode Glassmorphism dizayn tizimi, ovozli/matnli AI qidiruv va
 OpenAI/DeepSeek failover engine.
 
+> **Bepul hosting'ga (Vercel + Render + Neon) deploy qilmoqchimisiz?**
+> To'liq qadam-baqadam yo'riqnoma: [`DEPLOYMENT.md`](./DEPLOYMENT.md)
+
 ## Tezkor ishga tushirish (Docker)
 
 ```bash
